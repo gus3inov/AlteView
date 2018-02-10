@@ -1,15 +1,23 @@
-// импорт react в TS отличается от привычного import React from 'react' из-за особенностей модульной системы в TS
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import { Fragment } from 'react'
+import {BlackButton, WhiteButton} from './ui/atoms/button'
 
-// необходимо описывать интерфейсы для props и state компонентов
 interface IAppProps {
     title: string;
 }
 
-// функциональный компонент
-const App = (props: IAppProps) => <h1>{props.title}</h1>;
+const App = (props: IAppProps) => {
+    return (
+        <Fragment>
+            <h1>{props.title}</h1>
+            <img src="../assets/img/logo.svg" alt=""/>
+            <BlackButton size={true}>ffsf</BlackButton>
+            <WhiteButton size={false}>ffsf</WhiteButton>
+        </Fragment>
+    );
 
+}
 ReactDOM.render(
     <App title="Hello, React!" />,
     document.getElementById('root')
