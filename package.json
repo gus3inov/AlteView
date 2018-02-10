@@ -1,0 +1,49 @@
+{
+  "name": "alteview",
+  "version": "0.0.1",
+  "description": "Corporate online cinema",
+  "main": "index.tsx",
+  "scripts": {
+    "start": "concurrently \"npm run dev\"",
+    "api": "node simple_api/server.js",
+    "dev": "webpack-dev-server --hot --inline",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gus3inov/AlteView.git"
+  },
+  "keywords": [
+    "Cinema",
+    "View",
+    "React-Cinema",
+    "AlteView"
+  ],
+  "author": "Muslim Guseinov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gus3inov/AlteView/issues"
+  },
+  "homepage": "https://github.com/gus3inov/AlteView#readme",
+  "devDependencies": {
+    "@types/react": "^16.0.36",
+    "@types/react-dom": "^16.0.3",
+    "awesome-typescript-loader": "^3.4.1",
+    "clean-webpack-plugin": "^0.1.18",
+    "concurrently": "^3.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.1",
+    "styled-components": "^3.1.6",
+    "typescript": "^2.7.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "redux-form": "^7.2.3"
+  }
+}
