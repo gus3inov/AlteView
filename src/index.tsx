@@ -3,6 +3,6 @@ import * as ReactDOM from 'react-dom'
 import Root from './components/Root'
 
 ReactDOM.render(
-    <Root/>,
+    <Root title='AlteView'/>,
     document.getElementById('root')
 );

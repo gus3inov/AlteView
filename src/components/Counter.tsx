@@ -6,19 +6,21 @@ import { increment, decrement, reset } from '../redux/counter'
 import {Fragment} from "react"
 
 interface CounterProps extends DispatchProp<IStore>, React.HTMLProps<HTMLInputElement> {
-    count?: number;
+    value?: number;
+    increment?() : number;
+    decrement?() : number;
+    reset?()     : number;
 }
 
 class Counter extends React.Component<CounterProps, {}> {
-
     render() {
-        const { dispatch } = this.props
+        const { increment, decrement, reset } = this.props
         return (
             <Fragment>
-                <h1>{this.props.count}</h1>
-                <button onClick={dispatch(increment())}>increment</button>
-                <button onClick={dispatch(decrement())}>decrement</button>
-                <button onClick={dispatch(reset())}>reset</button>
+                <h1>{this.props.value}</h1>
+                <button onClick={increment}>increment</button>
+                <button onClick={decrement}>decrement</button>
+                <button onClick={reset}>reset</button>
             </Fragment>
         );
     }
@@ -29,7 +31,7 @@ class Counter extends React.Component<CounterProps, {}> {
  * интерфейсам мы пользуемся автоподбором всех свойств аргументов
  */
 const mapStateToProps = (state: IStore, ownProps: CounterProps) => ({
-    value: state.count.count
+    value: state.count
 });
 
 /**
@@ -46,4 +48,4 @@ const mapStateToProps = (state: IStore, ownProps: CounterProps) => ({
  * На практике, достаточно указать дженерику два первых пустых объекта,
  * и в третий аргумент отправить единый интерфейс свойств компонента.
  */
-export default connect<{}, {}, FieldProps>(mapStateToProps)(Counter);
+export default connect<{}, {}, CounterProps>(mapStateToProps, {increment, reset, decrement})(Counter);

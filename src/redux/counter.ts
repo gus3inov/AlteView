@@ -1,7 +1,7 @@
 import { INCREMENT, DECREMENT, RESET } from '../constance'
 
 export interface CounterState {
-    count: number
+    count?: number;
 }
 
 const initialState: CounterState = {
@@ -22,16 +22,16 @@ export interface actionReset {
 
 type CounterAction = actionIncrement | actionDecrement | actionReset
 
-export default function reducer(state: CounterState = initialState, action: CounterAction): number {
+export default function reducer(state: CounterState['count'] =  initialState.count, action: CounterAction): number {
     switch (action.type) {
         case INCREMENT:
-            return state.count + 1
+            return state + 2
         case DECREMENT:
-            return state.count - 1
+            return state - 2
         case RESET:
             return 0
         default:
-            return state.count;
+            return state;
     }
 }
 
@@ -39,6 +39,10 @@ export const increment = (): actionIncrement => ({
     type: INCREMENT
 });
 
-export const decrement = (): actionDecrement => ({ type: DECREMENT });
+export const decrement = (): actionDecrement => ({
+    type: DECREMENT
+});
 
-export const reset = (): actionReset => ({ type: RESET });
+export const reset = (): actionReset => ({
+    type: RESET
+});
