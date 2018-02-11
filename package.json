@@ -29,6 +29,7 @@
     "@types/react": "^16.0.36",
     "@types/react-dom": "^16.0.3",
     "@types/react-redux": "^5.0.14",
+    "@types/react-router-dom": "^4.2.3",
     "awesome-typescript-loader": "^3.4.1",
     "clean-webpack-plugin": "^0.1.18",
     "concurrently": "^3.5.1",

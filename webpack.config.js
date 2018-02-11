@@ -21,6 +21,10 @@ const config = {
         chunkFilename: '[name].bundle.js'
     },
 
+    devServer: {
+        historyApiFallback: true
+    },
+
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
