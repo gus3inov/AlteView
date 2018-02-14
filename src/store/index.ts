@@ -1,19 +1,11 @@
 import { createStore } from 'redux'
 import rootReducer from '../redux'
-import { CounterState } from '../redux/counter'
+import { CounterState } from '../components/Counter/counter'
 
-/**
- * Интерфейс хранилища будет использоваться в каждом mapStateToProps,
- * и в остальных местах, где мы напрямую получаем состояние хранилища
- * (например, в асинхронных действиях с redux-thunk)
- */
 export interface IStore {
     count: CounterState
 }
 
-/**
- * Этот же интерфейс указывается в качестве состояния при инициализации хранилища.
- */
 const configureStore = (initialState?: IStore) => {
     return createStore(
         rootReducer,
