@@ -5,6 +5,7 @@ import Counter from './Counter'
 import About from './About'
 import { Link, Route } from 'react-router-dom'
 import { Fragment } from 'react'
+import Header from './Header'
 
 export interface App {
    readonly title: string;
@@ -22,8 +23,7 @@ export default class Root extends React.Component<App> {
                           <Link to="/about">About</Link>
                       </nav>
                       <div>
-                          <h1>{this.props.title}</h1>
-                          <img src="../assets/img/logo.svg" alt=""/>
+                          <Header isOpen={true}/>
                           <Route path="/counter" component={ Counter }/>
                           <Route path="/about" component={ About }/>
                       </div>
