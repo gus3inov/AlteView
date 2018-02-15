@@ -2,10 +2,10 @@ import * as React from "react"
 import { Provider } from 'react-redux'
 import configureStore from '../store'
 import Counter from './Counter'
-import About from './About'
+import About from '../ui/templates/About'
 import { Link, Route } from 'react-router-dom'
 import { Fragment } from 'react'
-import Header from './Header'
+import MenuHeader from '../ui/organisms/Header/index'
 
 export interface App {
    readonly title: string;
@@ -14,18 +14,20 @@ export interface App {
 const store = configureStore()
 
 export default class Root extends React.Component<App> {
+
+    state = {
+        isOpen: false
+    }
     render() {
        return(
                <Provider store={ store }>
                   <Fragment>
-                      <nav>
-                          <Link to="/counter"> Counter</Link>
-                          <Link to="/about">About</Link>
-                      </nav>
                       <div>
-                          <Header isOpen={true}/>
-                          <Route path="/counter" component={ Counter }/>
-                          <Route path="/about" component={ About }/>
+                          <MenuHeader/>
+                          <div className="wrapper">
+                              <Route path="/counter" component={ Counter }/>
+                              <Route path="/about" component={ About }/>
+                          </div>
                       </div>
                   </Fragment>
                </Provider>
