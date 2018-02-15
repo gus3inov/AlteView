@@ -19,7 +19,7 @@ export default function toggleOpen<OriginProps>(Component: React.ComponentType<O
 
     return class extends React.Component<ResultProps, State>{
 
-        static displayName =  `toggleOpen(${Component.displayName || 'SUKA'})`
+        static displayName =  `toggleOpen(${Component.displayName || Component.name })`
 
         state: State = {
             isOpen: this.props.isOpen
@@ -32,7 +32,6 @@ export default function toggleOpen<OriginProps>(Component: React.ComponentType<O
                 isOpen: !this.state.isOpen
             })
 
-            console.log(isOpen)
         }
 
         render(){
