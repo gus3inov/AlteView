@@ -15,7 +15,7 @@ class MenuHeader extends React.Component<OriginProps & InjectedProps> {
 
         return (
             <Fragment>
-                <Menu isOpen={ isOpen }/>
+                <Menu toggleOpen={toggleOpen} isOpen={ isOpen }/>
                 <Header toggleOpen={toggleOpen} isOpen={isOpen}/>
             </Fragment>
         )
