@@ -9,17 +9,14 @@ export interface OriginProps {
     toggleOpen(): any;
 }
 
-class MenuHeader extends React.Component<OriginProps & InjectedProps> {
-    render() {
-        const { toggleOpen, isOpen } = this.props
-
+const MenuHeader:  React.StatelessComponent<OriginProps & InjectedProps> = props => {
+        const { toggleOpen, isOpen } = props
         return (
             <Fragment>
                 <Menu toggleOpen={toggleOpen} isOpen={ isOpen }/>
                 <Header toggleOpen={toggleOpen} isOpen={isOpen}/>
             </Fragment>
         )
-    }
 }
 
 export default toggleOpen(MenuHeader)

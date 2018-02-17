@@ -1,9 +1,9 @@
 import * as React from 'react'
-import {Fragment} from "react";
+import {Fragment} from "react"
 
 export interface InjectedProps {
     isOpen: boolean;
-    toggleOpen(): any   ;
+    toggleOpen(): any;
 }
 
 export interface ExternalProps {
