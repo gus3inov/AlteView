@@ -22,6 +22,10 @@ const config = {
     },
 
     devServer: {
+        proxy: [{
+            path: '/api/',
+            target: 'http://localhost:3001'
+        }],
         historyApiFallback: true
     },
 
