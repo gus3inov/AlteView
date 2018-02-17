@@ -51,6 +51,7 @@ body {
     min-width: 320px;
     position: relative;
     line-height: 1.6;
+    background-color: #e9ebee;
     font-family: "PTSans-Regular", sans-serif;
     overflow-x: hidden;
     margin: 0;
@@ -96,7 +97,7 @@ ul li{
 }
 
 .wrapper{
-    margin-top: 120px;
+    margin-top: 80px;
 }
 
 .icon.toggle{
@@ -158,4 +159,28 @@ ul li{
 
 .alt-menu .alt-menu__nav ul li a{
     color: #fff;
+}
+
+/************ \ Animations \ ************/
+
+.slide-enter {
+    opacity: 0.01;
+    transform: translateX(-200px);
+}
+
+.slide-enter.slide-enter-active {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: opacity 500ms ease-in, transform 1000ms;
+}
+
+.slide-exit {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.slide-exit.slide-exit-active {
+    opacity: 0.01;
+    transform: translateX(-200px);
+    transition: opacity 800ms ease-in;
 }
