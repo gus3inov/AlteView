@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import configureStore from '../store'
 import Counter from './Counter'
 import About from '../ui/templates/About'
-import { Link, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { Fragment } from 'react'
 import MenuHeader from '../ui/organisms/Header/index'
 

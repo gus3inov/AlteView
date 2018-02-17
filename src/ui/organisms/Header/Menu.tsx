@@ -1,12 +1,11 @@
 import * as React from "react"
 import styled from 'styled-components'
 import {darkColor} from "../../style-vars"
-import { Link} from 'react-router-dom'
-import toggleOpen from "../../../hocs/toggleOpen";
+import { Link } from 'react-router-dom'
 
 export interface OriginProps {
-    isOpen?: boolean;
-    toggleOpen?(): any;
+    isOpen: boolean;
+    toggleOpen(): any;
 }
 
 const StyledMenu = styled.div`
@@ -16,6 +15,7 @@ const StyledMenu = styled.div`
     position: fixed;
     top: ${ (props: { isOpen: boolean }) => props.isOpen ? '0': '-2000px' };
     transition: 0.32s;
+    z-index: 99;
 `
 
 const Menu = (props: OriginProps) => {
