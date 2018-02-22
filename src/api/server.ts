@@ -1,20 +1,19 @@
 import * as Koa from 'koa'
-import * as Router from 'koa-router'
-import * as Api from './routing'
+import router from './routing'
+import * as bodyParser from 'koa-bodyparser'
 
-import bodyParser from 'koa-bodyparser'
+const port = 3030
+const app  = new Koa()
 
-const port = 3001
-const app    = new Koa()
 app.use(bodyParser())
 
-app.use(async (ctx, next) => {
+app.use(router.routes())
 
-    ctx.body = Api;
+app.use(async (ctx, next) => {
+    await next()
+
+    ctx.body = ctx.request.body;
 })
 
-const router = new Router()
 
-app.use(router.routes())
 app.listen(port)
-

@@ -4,11 +4,11 @@ import { posters } from './mock'
 const router = new Router()
 
 router.get('/posters', async (ctx) => {
-    let posters = posters.map(poster => {
+    let postersObj = posters.map(poster => {
         return poster
     })
 
-    ctx.json(posters)
+    ctx.body = postersObj
 })
 
 export default router
