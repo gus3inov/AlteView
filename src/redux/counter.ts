@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET } from '../../constance'
+import { INCREMENT, DECREMENT, RESET } from '../constance'
 
 export interface CounterState {
     count?: number;
