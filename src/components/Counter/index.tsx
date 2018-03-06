@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { connect, Dispatch, DispatchProp } from 'react-redux'
 import { IStore } from '../../store'
-import { increment, decrement, reset } from './counter'
+import { increment, decrement, reset } from '../../redux/counter'
 import { Fragment } from "react"
 
 interface CounterProps extends DispatchProp<IStore>, React.HTMLProps<HTMLInputElement> {
