@@ -19,7 +19,6 @@ export interface OriginProps {
 }
 
 const  Header = (props: OriginProps ) => {
-
         const { toggleOpen, isOpen } = props;
 
         return (
@@ -31,11 +30,6 @@ const  Header = (props: OriginProps ) => {
                                 <i></i><i></i><i></i>
                             </div>
                         </button>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="logo">
-                            <img src="../../../../assets/img/logo.svg" alt=""/>
-                        </div>
                     </div>
                 </div>
             </StyledHeader>

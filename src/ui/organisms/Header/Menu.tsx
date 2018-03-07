@@ -10,26 +10,49 @@ export interface OriginProps {
 
 const StyledMenu = styled.div`
     background: ${darkColor};
-    width: 100%;
+    width: ${ (props: { isOpen: boolean }) => props.isOpen ? '300px': '100px' };
     height: 100vh;
     position: fixed;
-    top: ${ (props: { isOpen: boolean }) => props.isOpen ? '0': '-2000px' };
+    top: 0;
     transition: 0.32s;
-    z-index: 99;
+    z-index: 101;
+    font-size: ${ (props: { isOpen: boolean }) => props.isOpen ? '30px': '43px' };
 `
 
 const Menu = (props: OriginProps) => {
     return(
         <StyledMenu className="alt-menu" isOpen={ props.isOpen }>
+            <div className="logo">
+                { props.isOpen ? <img src="../../../../assets/img/logo.svg" alt=""/> : <img src="../../../../assets/img/logo-min.svg" alt=""/> }
+            </div>
             <nav className="alt-menu__nav">
                 <ul>
-                    <li><Link to="/" onClick={ props.toggleOpen }>Home</Link></li>
-                    <li><Link to="/counter" onClick={ props.toggleOpen }>Counter</Link></li>
-                    <li><Link to="/about" onClick={ props.toggleOpen }>About</Link></li>
+                    <li>
+                        <Link to="/" >
+                            <span>
+                                { props.isOpen ? (<span><i className="fa fa-home"></i>Home</span>) : (<i className="fa fa-home"></i>)}
+                            </span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/posters">
+                            <span>
+                                { props.isOpen ? (<span><i className="fa fa-film"></i>Posters</span>) : (<i className="fa fa-film"></i>)}
+                            </span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/about">
+                             <span>
+                                { props.isOpen ? (<span><i className="fa fa-align-left"></i>Blog</span>) : (<i className="fa fa-align-left"></i>)}
+                            </span>
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         </StyledMenu>
     )
 }
+
 
 export default Menu

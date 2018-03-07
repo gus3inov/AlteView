@@ -25,7 +25,7 @@ export default class Root extends React.Component<App> {
                       <div>
                           <MenuHeader/>
                           <div className="container wrapper">
-                              <Route path="/counter" component={ Counter }/>
+                              <Route path="/posters" component={ Counter }/>
                               <Route path="/about" component={ About }/>
                           </div>
                       </div>
