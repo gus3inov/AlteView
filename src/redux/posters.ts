@@ -1,7 +1,7 @@
 import { LOAD_POSTERS } from '../constance'
-import {OrderedMap, Record} from "immutable"
-import {Action, ActionCreator, Dispatch} from 'redux'
-import {ThunkAction} from 'redux-thunk'
+import { OrderedMap, Record } from "immutable"
+import { Action, ActionCreator, Dispatch } from 'redux'
+import { ThunkAction } from 'redux-thunk'
 
 
 export interface PostersState {
@@ -28,10 +28,10 @@ const initialState = Record({
 const defaultState = new initialState()
 
 export default function posters(posterState = defaultState, action: LoadAction): any {
+    const { posters } = action.payload
     switch (action.type){
         case LOAD_POSTERS:
-            console.log(action.payload.posters)
-            return action.payload.posters
+            return posterState.set('entities', posters)
         default:
             return posterState;
     }
@@ -39,10 +39,10 @@ export default function posters(posterState = defaultState, action: LoadAction):
 
 export const loadPosters: ActionCreator<ThunkAction<Action, LoadAction, void>> = () => ({
     return (dispatch: Dispatch<LoadAction>): Action => {
-            fetch('api/posters').then(res=> {
-                dispatch({
-                    type: LOAD_POSTERS,
-                    payload: res.json()
+        fetch('api/posters').then(res => {
+            dispatch({
+                type: LOAD_POSTERS,
+                payload: res.json()
             })
         })
     }

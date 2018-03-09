@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Provider } from 'react-redux'
 import configureStore from '../store'
-import Counter from './Counter'
+import Posters from '../ui/templates/Posters'
 import About from '../ui/templates/About'
 import { Route } from 'react-router-dom'
 import { Fragment } from 'react'
@@ -25,7 +25,7 @@ export default class Root extends React.Component<App> {
                       <div>
                           <MenuHeader/>
                           <div className="container wrapper">
-                              <Route path="/posters" component={ Counter }/>
+                              <Route path="/posters" component={ Posters }/>
                               <Route path="/about" component={ About }/>
                           </div>
                       </div>
