@@ -5,7 +5,7 @@
   "main": "index.tsx",
   "scripts": {
     "start": "concurrently \"npm run dev\" \"npm run api\"",
-    "api": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/api/server.ts",
+    "api": "nodemon --watch 'src/**/*' -e ts,tsx --exec ts-node ./src/api/server.ts",
     "dev": "webpack-dev-server --hot --inline",
     "build": "webpack"
   },
