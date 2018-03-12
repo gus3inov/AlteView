@@ -3,7 +3,7 @@ import { posters } from './mock'
 
 const router = new Router()
 
-router.get('/posters', async (ctx) => {
+router.get('/api/posters', async (ctx) => {
     let postersObj = posters.map(poster => {
         return poster
     })

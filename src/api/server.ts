@@ -2,7 +2,7 @@ import * as Koa from 'koa'
 import router from './routing'
 import * as bodyParser from 'koa-bodyparser'
 
-const port = 3030
+const port = 3022
 const app  = new Koa()
 
 app.use(bodyParser())

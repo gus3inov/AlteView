@@ -4,27 +4,29 @@ import { IStore } from "../../store"
 import { connect, DispatchProp } from "react-redux"
 
 export interface PostersProps {
-    posters: Array<object>;
+    posters?: Array<object>;
 }
 
 class Posters extends React.Component<PostersProps, {}> {
     componentDidMount(){
+        const { loadPosters } = this.props
+
         loadPosters()
     }
 
     render() {
         const { posters } = this.props
-        console.log(posters)
+
         return (
             <div>
-                Hello
+
             </div>
         );
     }
 }
 
 const mapStateToProps = (state: IStore, ownProps: PostersProps) => ({
-    posters: state.posters
+    posters: state.posters.get('entities')
 })
 
-export default connect<{}, {}, PostersProps>(mapStateToProps, { loadPosters })
+export default connect<{}, {}, PostersProps>(mapStateToProps, { loadPosters })(Posters)
