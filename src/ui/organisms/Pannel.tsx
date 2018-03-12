@@ -5,7 +5,6 @@ import { CSSTransitionGroup } from 'react-transition-group'
 export interface HeadProps {
     title: string;
     urlImg: string;
-    img(): any;
 }
 
 const StyledHead = styled.section`
@@ -28,7 +27,6 @@ const Head: React.StatelessComponent<HeadProps> = (props: HeadProps) => {
         >
             <StyledHead className="container-fluid">
                 <BackgroundImage url={ urlImg }/>
-                <img src="" alt=""/>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-5">

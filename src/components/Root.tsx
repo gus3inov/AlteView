@@ -18,12 +18,13 @@ export default class Root extends React.Component<App> {
     state = {
         isOpen: false
     }
+
     render() {
        return(
                <Provider store={ store }>
                   <Fragment>
                       <div>
-                          <MenuHeader/>
+                          <MenuHeader isOpen={this.state.isOpen}/>
                           <div className="container wrapper">
                               <Route path="/posters" component={ Posters }/>
                               <Route path="/about" component={ About }/>

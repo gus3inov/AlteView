@@ -9,7 +9,7 @@ export interface HelloProps {
 const Home = (props: HelloProps)=> {
     return (
         <Fragment>
-                <Pannel title="Main Page" urlImg="https://frontside.io/blog/2016/12/15/building-infinite-scroll-in-react-native/react-native-header.jpg" />
+
         </Fragment>
     )
 }
