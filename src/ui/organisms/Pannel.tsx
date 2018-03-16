@@ -1,10 +1,14 @@
 import * as React from "react"
-import styled from "styled-components"
+import styled, {StyledFunction} from "styled-components"
 import { CSSTransitionGroup } from 'react-transition-group'
 
 export interface HeadProps {
     title: string;
     urlImg: string;
+}
+
+export interface Iimage{
+    url: string;
 }
 
 const StyledHead = styled.section`
@@ -39,8 +43,10 @@ const Head: React.StatelessComponent<HeadProps> = (props: HeadProps) => {
         )
 }
 
-const BackgroundImage = styled.img.attrs({
-    src:  ( props: { url: string } ): any => props.url
+const image: StyledFunction<Iimage & React.HTMLProps<HTMLImageElement>> = styled.img
+
+const BackgroundImage = image.attrs({
+    src:  (props: { url: string }): any => props.url
 })`
     position: absolute;
     top: 0;
