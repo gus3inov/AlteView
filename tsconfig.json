@@ -6,7 +6,9 @@
     "module": "commonjs",
     "target": "es2017",
     "jsx": "react",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "typeRoots": [ "node_modules/@types/" ],
+    "types": [ "config", "mysql-query-language" ]
   },
   "include": [
     "./src/**/*"

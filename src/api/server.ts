@@ -1,19 +1,20 @@
-import * as Koa from 'koa'
-import router from './routing'
-import * as bodyParser from 'koa-bodyparser'
+import * as Koa from 'koa';
+import * as config from  'config';
+import err from './middleware/error';
+import {routes, allowedMethods} from './middleware/routes';
 
-const port = 3022
-const app  = new Koa()
+const port = config.get('API.server.port');
+const app  = new Koa();
 
-app.use(bodyParser())
-
-app.use(router.routes())
+app.use(err);
+app.use(routes());
+app.use(allowedMethods());
 
 app.use(async (ctx, next) => {
-    await next()
+    await next();
 
     ctx.body = ctx.request.body;
 })
 
 
-app.listen(port)
+app.listen(port);
