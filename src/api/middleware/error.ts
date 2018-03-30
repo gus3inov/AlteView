@@ -1,4 +1,9 @@
-export default async (ctx, next) => {
+interface ContextStats {
+    status: number;
+    body: object;
+}
+
+export default async (ctx: ContextStats, next:any) => {
     try {
         await next();
     } catch (err) {
