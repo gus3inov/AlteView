@@ -1,4 +1,13 @@
 {
+  "dev": {
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "root" ,
+    "database": "alteview_db",
+    "driver": "mysql",
+    "multipleStatements": true
+  },
   "API": {
     "dbConfig": {
       "host": "localhost",
@@ -6,7 +15,7 @@
       "dbName": "alteview_db"
     },
     "server": {
-      "port": 8010,
+      "port": 8015,
       "tableName": "posters"
     },
     "credit": {
