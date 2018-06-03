@@ -97,8 +97,15 @@ ul li{
 }
 
 .wrapper{
-    margin-top: 80px;
+    margin-top: 110px;
 }
+
+@media (max-width: 1680px) {
+    .container.wrapper{
+        max-width: 1540px;
+    }
+}
+
 
 .icon.toggle{
     background-color: transparent;

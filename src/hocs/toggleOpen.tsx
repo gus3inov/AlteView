@@ -15,31 +15,29 @@ export interface State {
 }
 
 export default function toggleOpen<OriginProps>(Component: React.ComponentType<OriginProps & InjectedProps>){
-    type ResultProps = OriginProps & ExternalProps
+    type ResultProps = OriginProps & ExternalProps;
+    type Component = React.ComponentType;
 
     return class extends React.Component<ResultProps, State>{
 
-        static displayName =  `toggleOpen(${Component.displayName || Component.name })`
+        static displayName =  `toggleOpen(${ Component.displayName })`;
 
         state: State = {
             isOpen: this.props.isOpen
-        }
+        };
 
         toggleOpen = () => {
-            const { isOpen } = this.props
-
             this.setState({
                 isOpen: !this.state.isOpen
             })
-
-        }
+        };
 
         render(){
             return (
                 <Fragment>
-                    <Component {...this.props} {...this.state} toggleOpen = { this.toggleOpen } />
+                    <Component {...this.props} {...this.state} toggleOpen = { this.toggleOpen } />;
                 </Fragment>
-            )
+            );
         }
 
     }

@@ -24,7 +24,7 @@ const config = {
     devServer: {
         proxy: [{
             path: '/api/',
-            target: 'http://localhost:3022',
+            target: 'http://localhost:8010',
             secure: false,
             changeOrigin: true,
         }],
